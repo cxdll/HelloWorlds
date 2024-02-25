@@ -1,0 +1,145 @@
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: scroll;
+}
+
+.result-bg{
+    background-image: url(https://wallpapers.com/images/high/2048x1152-aesthetic-minimalist-moon-and-stars-l14anw4gkdr2gwit.webp);
+}
+
+.home-bg{
+    background-image: url(https://wallpapercave.com/wp/VCERv0o.png);
+}
+
+.input-container {
+margin-top: 400px;
+}
+
+.keyword-input {
+padding: 10px;
+font-size: 40px;
+color: #ffffff;
+font-family:'Simplifica', sans-serif;
+}
+
+input{
+font-family:'Simplifica', sans-serif;
+height: 40px;
+width: 380px;
+font-size: 20px;
+color: #ffffff;
+background-color: #ffffff2f;
+border-color: #ffffff;
+}
+
+button {
+border-radius: 4px;
+background-image:  linear-gradient(43deg, #4158D0 0%, #50b8c8 46%, #FFCC70 100%);
+border: none;
+color: #ffffff;
+text-align: center;
+font-size: 25px;
+width: 200px;
+transition: all 0.5s;
+font-family:'Simplifica', sans-serif;
+}
+
+.go-button span {
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+
+.go-button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.go-button:hover span {
+padding-right: 25px;
+}
+
+.go-button:hover span:after {
+opacity: 1;
+right: 0;
+}
+
+.go-button {
+margin-top: 30px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+h1{
+background-image: linear-gradient(43deg, #4158D0 0%, #50b8c8 46%, #FFCC70 100%);
+background-clip: text;
+color: transparent;
+font-size: 100px;
+margin-bottom: 0px;
+margin-top: 0px;
+}
+
+.description-container{
+font-family:'Comfortaa', sans-serif;
+font-size: 25px;
+
+}
+
+.sub-title{
+font-size: 55px;
+margin-bottom: 0;
+margin-top: 10px;
+font-family:'Simplifica', sans-serif;
+}
+
+.result-container{
+color: white;
+background-color: #51515151;
+margin: 20px;
+padding: 10px;
+}
+
+@font-face {
+font-family: "Simplifica";
+src: url("SIMPLIFICA Typeface.ttf");
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("Comfortaa-VariableFont_wght.ttf");
+    }
+
+.wordcloud-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.wordcloud-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-input-container {
+    padding: 20px;
+    font-family:'Simplifica', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+
+
+a{
+color: rgb(196, 229, 255);
+}
