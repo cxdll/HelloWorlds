@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+        <title>Hello World!</title>
+    </head>
+    <body class="body1 home-bg">
+        <h1>Hello World!</h1>
+        <div class="input-container">
+            <label class="keyword-input" for="keyword-input">Explore your interest:</label>
+            <input class="keyword-input" type="text" id="keyword-input" placeholder="e.g., Artificial Intelligence">
+            <br>
+            <button class="go-button" id="go-button" onclick="goToSecondPage()"><span>GO!</span></button>
+        </div>
+
+        <script>
+            function goToSecondPage() {
+                var keyword = document.getElementById("keyword-input").value;
+                if (keyword.trim() !== "")
+                    window.location.href = `/results?keyword=${encodeURIComponent(keyword)}`;
+                else 
+                    window.location.href = `/results?keyword=${"Artificial Intelligence"}`;
+            }        
+        </script>
+    </body>
+</html>

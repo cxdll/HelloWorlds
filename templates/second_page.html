@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"/>
+        <title>Results</title>
+    </head>
+<body class="body1 result-bg">
+    <h1 id="results-title"></h1>
+    <div class="result-container" id="result-container">
+
+        <div id="summary-container">
+            <h2 class="sub-title">What is it?</h2>
+            <div class="description-container">
+                <p id="summarized-text">{{ summarized_text.description }}</p>
+            </div>
+        </div>
+
+        <div id="news-articles">
+            <h2 class="sub-title">Top 3 News Articles</h2>
+            <div class="description-container">
+            <ul id="news-articles-list">
+                {% for article in news_articles %}
+                    <li>
+                        <p><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></p>
+                        <p>{{ article.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+
+        <div id="wordcloud-container">
+            <h2>Word Cloud</h2>
+            <img id="wordcloud-image" src="{{ url_for('word_cloud', keyword=keyword) }}">
+        </div>
+
+        <div class="search-input-container" id="search-input-container">
+            <label for="search-input">Search for something else:</label>
+            <input type="text" id="search-input" placeholder="e.g., Java">
+            <br>
+            <button class="go-button" id="search-button" onclick="redirectToSecondPage()"><span><b>Search</b></span></button>
+        </div>
+
+    </div>
+
+    <script>
+        const keyword = new URLSearchParams(window.location.search).get('keyword');
+        const resultsTitle = document.getElementById('results-title');
+        resultsTitle.textContent = keyword;
+        
+        function redirectToSecondPage() {
+            var newKeyword = document.getElementById("search-input").value;
+            if (newKeyword.trim() !== "") 
+                window.location.href = `results?keyword=${encodeURIComponent(newKeyword)}`;
+            else 
+                window.location.href = `results?keyword=${"Java"}`;        
+        }    
+    </script>
+</body>
+</html>
